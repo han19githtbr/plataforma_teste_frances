@@ -1,0 +1,42 @@
+<!-- Navbar -->
+<nav class="main-header navbar navbar-expand navbar-dark navbar-primary">
+  <!-- Left navbar links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="navbar-brand" [routerLink]="['/']"><b class="text-light"><i class="fas fa-home mr-1"></i>HOME</b></a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block" *ngIf="authService.isAuthenticated()">
+      <a [routerLink]="['/membros']" routerLinkActive="active" class="nav-link"><b class="text-light">Nossa Equipe</b></a>
+    </li>
+
+    <li class="nav-item d-none d-sm-inline-block">
+      <a [routerLink]="['/about']" routerLinkActive="active" class="nav-link"><b class="text-light">Sobre o projeto</b></a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block" *ngIf="authService.isAuthenticated()">
+      <a [routerLink]="['/conteudo']" routerLinkActive="active" class="nav-link"><b class="text-light">Conteúdo</b></a>
+    </li>
+  </ul>
+
+  <!-- Right navbar links -->
+  <ul class="navbar-nav ml-auto">
+
+    <!-- Notifications Dropdown Menu -->
+    <li class="nav-item dropdown">
+      <a class="nav-link" data-toggle="dropdown" href="#">
+        <i class="fas fa-bars"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+        <a [routerLink]="['/login']" class="dropdown-item" *ngIf="!authService.isAuthenticated()">
+          <i class="fas fa-sign-in-alt"></i> Entrar
+        </a>
+        <a href="#" class="dropdown-item" *ngIf="authService.isAuthenticated()">
+          <i class="fas fa-user-circle"></i> Meu Perfil
+        </a>
+        <div class="dropdown-divider" *ngIf="authService.isAuthenticated()"></div>
+        <a class="dropdown-item dropdown-footer" *ngIf="authService.isAuthenticated()" (click)="this.authService.logout()">
+          <i class="fas fa-sign-out-alt"></i> Sair
+        </a>
+      </div>
+    </li>
+  </ul>
+</nav>

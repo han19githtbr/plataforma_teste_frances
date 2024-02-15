@@ -1,0 +1,18 @@
+.main-header {
+  padding-left: 8% !important;
+  padding-right: 8% !important;
+}
+.welcome-jumbotron{
+  text-align: center!important;
+  background-color: white;
+}
+
+.welcome-jumbotron h1{
+  color:#656464;
+  padding-bottom: 30px;
+}
+
+.welcome-jumbotron p{
+  color:#656464;
+  padding-bottom: 30px;
+}

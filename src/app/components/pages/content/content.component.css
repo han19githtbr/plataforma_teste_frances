@@ -1,0 +1,36 @@
+.title-content {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.title-content h1 {
+  font-weight: bold;
+}
+
+.card {
+  margin-top: 2rem;
+  width: 18rem;
+  border: 2px solid black;
+}
+
+.container-card {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.card-text {
+  font-weight: bold;
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .container-card {
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 18rem;
+  }
+
+}

@@ -1,0 +1,51 @@
+<div class="login-box">
+  <div class="login-logo">
+    <a [routerLink]="['/']"><b>Registrar</b></a>
+  </div>
+
+  <div class="card" wfd-id="2">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Cadastre o seu usuário</p>
+
+      <form [formGroup]="registerForm" (ngSubmit)="submit()">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Nome do Usuário" formControlName="name">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" placeholder="Email" formControlName="email">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Password" formControlName="password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="!registerForm.valid">Cadastrar</button>
+          </div>
+
+        </div>
+      </form>
+
+      <p class="mb-0">
+        <a [routerLink]="['/login']" class="text-center">Entrar</a>
+      </p>
+    </div>
+  </div>
+</div>
+

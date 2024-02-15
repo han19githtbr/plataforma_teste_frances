@@ -1,0 +1,17 @@
+.sobrenos {
+  padding-top: 2rem;
+  justify-content: center;
+  font-family: 'Times New Roman';
+}
+
+.titulo {
+  font-weight: bold;
+  font-family: 'Times New Roman';
+}
+
+@media screen and (max-width: 1200px) {
+  .sobrenos {
+    justify-content: center;
+    font-family: 'Times New Roman';
+  }
+}

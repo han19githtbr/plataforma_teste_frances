@@ -1,0 +1,19 @@
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end; /* Alinha os itens à direita */
+  align-items: center; /* Centraliza verticalmente os itens */
+}
+
+.nav-item {
+  margin-right: 15px; /* Adiciona margem entre os itens */
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-nav {
+    justify-content: center; /* Alinha os itens ao centro */
+  }
+
+  .nav-item {
+    margin-right: 0; /* Remove a margem entre os itens */
+  }
+}
