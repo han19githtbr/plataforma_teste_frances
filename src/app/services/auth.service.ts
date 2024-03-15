@@ -13,7 +13,7 @@ export class AuthService {
   //private baseUrl = 'mongodb+srv://frances_plataforma:19handyrio@francescluster.m8koll3.mongodb.net/';
 
 
-  private baseUrl = 'https://backend-plataforma-frances.onrender.com/'; //link do deploy do Back-end na plataforma render
+  private baseUrl = 'mongodb+srv://frances_plataforma:19handyrio@francescluster.m8koll3.mongodb.net/'; //link do deploy do Back-end na plataforma render
 
   constructor(private http: HttpClient) { }
 
