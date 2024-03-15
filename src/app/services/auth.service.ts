@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-//import { User } from '../../../../backend/models/user.model.js'
+import { User } from '../../../backend/models/user.model.js'
 import { tap } from 'rxjs/operators';
 
 @Injectable({
@@ -18,11 +18,11 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(values: { email: string, password: string }) {
-    return this.http.post<any>(`${this.baseUrl}/api/users/login`, values);
+    return this.http.post<User>(`${this.baseUrl}/api/users/login`, values);
   }
 
-  register(user: any) {
-    return this.http.post<any>(`${this.baseUrl}/api/users/register`, user);
+  register(user: User) {
+    return this.http.post<User>(`${this.baseUrl}/api/users/register`, user);
   }
 
   logout() {

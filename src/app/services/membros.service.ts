@@ -1,7 +1,7 @@
 // membro.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-//import { Member } from '../../../../backend/models/member.model.js'
+import { Member } from '../../../backend/models/member.model.js'
 import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable({
@@ -19,12 +19,12 @@ export class MembrosService {
   constructor(private http: HttpClient){};
 
 
-  membros():Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/api/members`);
+  membros():Observable<Member[]> {
+    return this.http.get<Member[]>(`${this.baseUrl}/api/members`);
   }
 
-  membroById(id: string | number):Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/api/members/${id}`);
+  membroById(id: string | number):Observable<Member> {
+    return this.http.get<Member>(`${this.baseUrl}/api/members/${id}`);
   }
 
 }
