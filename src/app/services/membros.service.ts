@@ -1,7 +1,7 @@
 // membro.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Member } from '../../../../backend/models/member.model.js'
+//import { Member } from '../../../../backend/models/member.model.js'
 import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable({
@@ -12,17 +12,19 @@ export class MembrosService {
 
   //private baseUrl = 'http://localhost:3000'; // Altere para a nova URL do backend
 
-  private baseUrl = 'mongodb+srv://frances_plataforma:19handyrio@francescluster.m8koll3.mongodb.net/';
+  //private baseUrl = 'mongodb+srv://frances_plataforma:19handyrio@francescluster.m8koll3.mongodb.net/';
+
+  private baseUrl = 'https://backend-plataforma-frances.onrender.com/'; //link do deploy do Back-end na plataforma render
 
   constructor(private http: HttpClient){};
 
 
-  membros():Observable<Member[]> {
-    return this.http.get<Member[]>(`${this.baseUrl}/api/members`);
+  membros():Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/api/members`);
   }
 
-  membroById(id: string | number):Observable<Member> {
-    return this.http.get<Member>(`${this.baseUrl}/api/members/${id}`);
+  membroById(id: string | number):Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/api/members/${id}`);
   }
 
 }

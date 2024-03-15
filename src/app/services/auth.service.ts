@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../../../../backend/models/user.model.js'
+//import { User } from '../../../../backend/models/user.model.js'
 import { tap } from 'rxjs/operators';
 
 @Injectable({
@@ -8,16 +8,21 @@ import { tap } from 'rxjs/operators';
 })
 export class AuthService {
 
-  private baseUrl = 'http://localhost:3000'; // Altere para a nova URL do backend
+  //private baseUrl = 'http://localhost:3000'; // Altere para a nova URL do backend
+
+  //private baseUrl = 'mongodb+srv://frances_plataforma:19handyrio@francescluster.m8koll3.mongodb.net/';
+
+
+  private baseUrl = 'https://backend-plataforma-frances.onrender.com/'; //link do deploy do Back-end na plataforma render
 
   constructor(private http: HttpClient) { }
 
   login(values: { email: string, password: string }) {
-    return this.http.post<User>(`${this.baseUrl}/api/users/login`, values);
+    return this.http.post<any>(`${this.baseUrl}/api/users/login`, values);
   }
 
-  register(user: User) {
-    return this.http.post<User>(`${this.baseUrl}/api/users/register`, user);
+  register(user: any) {
+    return this.http.post<any>(`${this.baseUrl}/api/users/register`, user);
   }
 
   logout() {
