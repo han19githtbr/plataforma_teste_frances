@@ -1,7 +1,7 @@
 // membro.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Member } from '../../../backend/models/member.model.js'
+import { Member } from '../../../../backend/models/member.model.js'
 import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable({
@@ -10,7 +10,9 @@ import { Observable, catchError, throwError } from 'rxjs';
 
 export class MembrosService {
 
-  private baseUrl = 'http://localhost:3000'; // Altere para a nova URL do backend
+  //private baseUrl = 'http://localhost:3000'; // Altere para a nova URL do backend
+
+  private baseUrl = 'mongodb+srv://frances_plataforma:19handyrio@francescluster.m8koll3.mongodb.net/';
 
   constructor(private http: HttpClient){};
 

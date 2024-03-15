@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../../../backend/models/user.model.js'
+import { User } from '../../../../backend/models/user.model.js'
 import { tap } from 'rxjs/operators';
 
 @Injectable({
